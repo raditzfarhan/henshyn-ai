@@ -1,4 +1,4 @@
-# Command: /init
+# Command: /henshin
 
 ## Description
 Guided onboarding. Sets up the assistant identity, personality, and user context by asking questions and writing to memory files. Run this once when first setting up, or re-run to reset preferences.

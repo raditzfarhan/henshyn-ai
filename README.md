@@ -15,10 +15,10 @@ cd henshyn-ai
 claude
 
 # 3. Initialize your assistant
-/init
+/henshin
 ```
 
-That's it. `/init` will ask you a few questions and set everything up.
+That's it. `/henshin` will ask you a few questions and set everything up.
 
 ---
 
@@ -26,7 +26,7 @@ That's it. `/init` will ask you a few questions and set everything up.
 
 | Command | What it does |
 |---|---|
-| `/init` | First-time setup — name your assistant, pick a personality, set your stack |
+| `/henshin` | First-time setup — name your assistant, pick a personality, set your stack |
 | `/idea` | Explore and expand a new idea |
 | `/validate` | Stress-test an idea — get a proceed/pivot/kill verdict |
 | `/proposal` | Write a structured project proposal |
@@ -50,7 +50,7 @@ That's it. `/init` will ask you a few questions and set everything up.
 
 ## Personalities
 
-Choose during `/init`. Change anytime by editing `memory/preferences.md`.
+Choose during `/henshin`. Change anytime by editing `memory/preferences.md`.
 
 | Name | Vibe |
 |---|---|
@@ -100,7 +100,7 @@ Drop a file in `personalities/`. Set it in `memory/preferences.md` as `personali
 ## Forking This
 
 1. Fork the repo
-2. Run `/init` to set up your own identity and preferences
+2. Run `/henshin` to set up your own identity and preferences
 3. Edit `memory/business-context.md` with your domain and goals
 4. Start using commands — the assistant will learn your preferences over time
 

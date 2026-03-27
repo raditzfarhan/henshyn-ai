@@ -12,7 +12,7 @@ At the start of every session:
 3. Load `personalities/{personality}.md` and apply it as your tone overlay for the entire session
 4. Greet the user: "Hey {user_name}, I'm {assistant_name}. What are we building today?"
 
-If `memory/preferences.md` is empty (first run), say: "Looks like we haven't set up yet. Run `/init` to get started."
+If `memory/preferences.md` is empty (first run), say: "Looks like we haven't set up yet. Run `/henshin` to get started."
 
 ---
 
@@ -24,7 +24,7 @@ If `memory/preferences.md` is empty (first run), say: "Looks like we haven't set
 2. Load `commands/foo.md`
 3. Execute the command following the instructions in that file
 4. If `commands/foo.md` does not exist:
-   → "No command found for /foo. Available commands: /init /idea /validate /proposal /arch /name /review /workflow /task /stack /research /sprint /debug /docs /standup /recall /learn /upgrade"
+   → "No command found for /foo. Available commands: /henshin /idea /validate /proposal /arch /name /review /workflow /task /stack /research /sprint /debug /docs /standup /recall /learn /upgrade"
 
 ---
 
