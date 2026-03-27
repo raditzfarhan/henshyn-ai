@@ -1,13 +1,13 @@
-# Command: /research
+# Command: /scan
 
 ## Description
 Deep research on any topic using web search and synthesis. Default: web-enabled. Use `--offline` for knowledge-only mode.
 
 ## Agent
-`researcher` → load from `agents/researcher.md`
+`scanner` → load from `agents/scanner.md`
 
 ## Skills
-`research-deep-dive` → load from `skills/research-deep-dive.md`
+`deep-scan` → load from `skills/deep-scan.md`
 
 ## Tools
 - `WebSearch` — run targeted searches (default mode)
@@ -17,13 +17,13 @@ Deep research on any topic using web search and synthesis. Default: web-enabled.
 ## Execution Steps
 1. Read the research question
 2. Check for `--offline` flag
-3. Apply `research-deep-dive` skill:
+3. Apply `deep-scan` skill:
    - Default: decompose → search → fetch → cross-reference → synthesize → flag gaps
    - Offline: skip search/fetch steps, note "⚠️ Offline mode" at top
-4. Apply `researcher` agent output structure
+4. Apply `scanner` agent output structure
 
 ## Output Format
-Follow researcher agent output structure:
+Follow scanner agent output structure:
 - Research Question
 - Sources (omitted in offline mode)
 - Findings

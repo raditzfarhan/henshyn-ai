@@ -9,7 +9,7 @@ Full pipeline from raw idea to validated proposal and system design. Chains 4 ag
 ## Steps
 
 ### Step 1: Validate the Idea
-**Agent:** `idea-analyst` + `validate-idea` skill
+**Agent:** `wish-analyst` + `validate-idea` skill
 **Input:** Raw idea from user
 **Process:** Run `/validate` flow
 **Output:** Verdict + risk analysis

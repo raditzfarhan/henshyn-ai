@@ -41,12 +41,12 @@ Ask each question one at a time. Wait for the answer before asking the next.
 6. Write all collected answers to `memory/preferences.md` and `memory/business-context.md`.
 
 7. Respond: "All set. I'm {assistant_name}, your {personality} assistant. Here's what you can do:
-   - `/idea` — explore a new idea
+   - `/wish` — explore a new idea
    - `/validate` — stress-test an idea
    - `/proposal` — write a project proposal
    - `/arch` — design a system
-   - `/task` — break a feature into tasks
-   - `/research` — deep research on any topic
+   - `/mission` — break a feature into tasks
+   - `/scan` — deep research on any topic
    - Type `/help` to see all commands.
    Let's build something."
 

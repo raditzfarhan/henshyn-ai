@@ -1,4 +1,4 @@
-# Command: /upgrade
+# Command: /evolve
 
 ## Description
 Claude reviews its own skills and agents against accumulated learnings and proposes targeted improvements. Writes approved changes directly to the relevant files.

@@ -4,7 +4,7 @@
 Generate a standup summary: what was done, what's next, and any blockers. Reads from recent memory and session context.
 
 ## Agent
-`task-manager` → load from `agents/task-manager.md`
+`mission-control` → load from `agents/mission-control.md`
 
 ## Skills
 None.

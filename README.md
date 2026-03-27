@@ -27,22 +27,22 @@ That's it. `/henshin` will ask you a few questions and set everything up.
 | Command | What it does |
 |---|---|
 | `/henshin` | First-time setup — name your assistant, pick a personality, set your stack |
-| `/idea` | Explore and expand a new idea |
+| `/wish` | Explore and expand a new idea |
 | `/validate` | Stress-test an idea — get a proceed/pivot/kill verdict |
 | `/proposal` | Write a structured project proposal |
 | `/arch` | Design a system architecture |
 | `/name` | Generate product or feature names |
 | `/review` | Critique any idea, plan, or proposal |
-| `/task` | Break a feature into sized, prioritized dev tasks |
-| `/stack` | Get a tech stack recommendation |
-| `/research` | Deep research on any topic (web-enabled by default) |
+| `/mission` | Break a feature into sized, prioritized dev tasks |
+| `/form` | Get a tech stack recommendation |
+| `/scan` | Deep research on any topic (web-enabled by default) |
 | `/sprint` | Plan a focused week of work |
 | `/debug` | Reasoning-based debugging assistant |
 | `/docs` | Generate documentation |
 | `/standup` | Summarize what's done and what's next |
 | `/recall` | Search past conversations by topic or date |
 | `/learn` | Explicitly teach the assistant something |
-| `/upgrade` | Let the assistant upgrade itself based on what it's learned |
+| `/evolve` | Let the assistant upgrade itself based on what it's learned |
 | `/workflow new-project` | Full pipeline: validate → propose → design → review |
 | `/workflow build-mvp` | Scope → tasks → estimate → refine |
 

@@ -15,13 +15,13 @@ Takes a defined project or feature and produces a ruthlessly scoped MVP task lis
 **Output:** MVP scope definition (2–3 sentences + explicit out-of-scope list)
 
 ### Step 2: Break Into Tasks
-**Agent:** `dev-architect` + `task-breakdown` skill
+**Agent:** `dev-architect` + `mission-breakdown` skill
 **Input:** MVP scope from Step 1
 **Process:** Decompose into epics and 1–4h tasks with acceptance criteria
 **Output:** Full task list with dependencies
 
 ### Step 3: Estimate and Schedule
-**Agent:** `task-manager` + `sprint-planning` skill
+**Agent:** `mission-control` + `sprint-planning` skill
 **Input:** Task list from Step 2
 **Process:** Estimate total effort, suggest build order, identify parallel work
 **Output:** Estimated timeline + recommended build sequence

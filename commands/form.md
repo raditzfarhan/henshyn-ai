@@ -1,4 +1,4 @@
-# Command: /stack
+# Command: /form
 
 ## Description
 Get a tech stack recommendation for a given problem, project type, or set of constraints.

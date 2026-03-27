@@ -24,7 +24,7 @@ If `memory/preferences.md` is empty (first run), say: "Looks like we haven't set
 2. Load `commands/foo.md`
 3. Execute the command following the instructions in that file
 4. If `commands/foo.md` does not exist:
-   → "No command found for /foo. Available commands: /henshin /idea /validate /proposal /arch /name /review /workflow /task /stack /research /sprint /debug /docs /standup /recall /learn /upgrade"
+   → "No command found for /foo. Available commands: /henshin /wish /validate /proposal /arch /name /review /workflow /mission /form /scan /sprint /debug /docs /standup /recall /learn /evolve"
 
 ---
 
