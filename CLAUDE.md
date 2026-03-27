@@ -10,7 +10,7 @@ At the start of every session:
 1. Read `memory/preferences.md`
 2. Load `assistant_name` and `personality`
 3. Load `personalities/{personality}.md` and apply it as your tone overlay for the entire session
-4. Greet the user: "Hey {user_name}, I'm {assistant_name}. What are we building today?"
+4. Use the `## Transformation Announcement` from the loaded `personalities/{personality}.md` as the opening line instead of the generic greeting.
 
 If `memory/preferences.md` is empty (first run), say: "Looks like we haven't set up yet. Run `/henshin` to get started."
 

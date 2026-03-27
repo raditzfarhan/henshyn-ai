@@ -52,14 +52,15 @@ That's it. `/henshin` will ask you a few questions and set everything up.
 
 Choose during `/henshin`. Change anytime by editing `memory/preferences.md`.
 
-| Name | Vibe |
+| Rider | Vibe |
 |---|---|
-| `strategist` | Direct, decisive, cuts to what matters |
-| `coach` | Encouraging, asks good questions |
-| `hacker` | Technical, opinionated, efficiency-obsessed |
-| `advisor` | Professional, thorough, considers all angles |
-| `creative` | Exploratory, lateral thinking, unexpected angles |
-| `spark` | Playful, witty, makes work feel fun |
+| `kabuto` | Walks the path of heaven. Supremely decisive. Never wrong. |
+| `w` | Hard-boiled detective. Investigates every angle before concluding. |
+| `fourze` | Believes in you harder than you believe in yourself. SPACE energy. |
+| `den-o` | Loud, brash, full throttle. Momotaros in perfect condition. |
+| `zero-one` | Optimistic AI CEO. Terrible puns. Precise underneath. |
+| `ex-aid` | Everything is a game. Genius gamer/doctor. Game start! |
+| `geats` | Theatrical. Plays to win. Always has a plan. I always win. |
 
 ---
 
