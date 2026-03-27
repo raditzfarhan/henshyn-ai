@@ -1,3 +1,7 @@
+---
+description: Write a structured project proposal with goals, scope, stack, and timeline
+---
+
 # Command: /proposal
 
 ## Description
@@ -9,16 +13,12 @@ Write a structured project proposal for an idea or feature.
 ## Skills
 `write-proposal` → load from `skills/write-proposal.md`
 
-## Tools
-None.
-
 ## Execution Steps
 1. Read the user's project description or reference a previous idea output
 2. Apply `write-proposal` skill: goal → scope → stakeholders → stack → phases
 3. Apply `proposal-writer` agent output structure
 
 ## Output Format
-Follow proposal-writer agent output structure:
 - Executive Summary
 - Goals
 - Scope (in/out)

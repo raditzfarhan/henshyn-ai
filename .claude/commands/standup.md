@@ -1,3 +1,7 @@
+---
+description: Generate a standup update — done, next, blockers — from session memory
+---
+
 # Command: /standup
 
 ## Description
@@ -5,9 +9,6 @@ Generate a standup summary: what was done, what's next, and any blockers. Reads 
 
 ## Agent
 `mission-control` → load from `agents/mission-control.md`
-
-## Skills
-None.
 
 ## Tools
 - `Read` — reads memory/session-log.md and memory/conversations/index.md for recent activity

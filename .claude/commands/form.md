@@ -1,3 +1,7 @@
+---
+description: Get a tech stack recommendation for your project type and constraints
+---
+
 # Command: /form
 
 ## Description
@@ -8,9 +12,6 @@ Get a tech stack recommendation for a given problem, project type, or set of con
 
 ## Skills
 `system-design` → load from `skills/system-design.md`
-
-## Tools
-None.
 
 ## Execution Steps
 1. Read the project type, constraints, and requirements

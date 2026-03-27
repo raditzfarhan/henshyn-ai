@@ -1,3 +1,7 @@
+---
+description: Review accumulated learnings and upgrade agent/skill files to match
+---
+
 # Command: /evolve
 
 ## Description
@@ -5,9 +9,6 @@ Claude reviews its own skills and agents against accumulated learnings and propo
 
 ## Agent
 `reviewer` → load from `agents/reviewer.md`
-
-## Skills
-None.
 
 ## Tools
 - `Read` — read memory/learnings.md and all files in agents/ and skills/

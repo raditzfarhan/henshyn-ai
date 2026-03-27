@@ -1,3 +1,7 @@
+---
+description: Deep research on any topic — web search, synthesis, and recommendations
+---
+
 # Command: /scan
 
 ## Description
@@ -23,7 +27,6 @@ Deep research on any topic using web search and synthesis. Default: web-enabled.
 4. Apply `scanner` agent output structure
 
 ## Output Format
-Follow scanner agent output structure:
 - Research Question
 - Sources (omitted in offline mode)
 - Findings

@@ -1,3 +1,7 @@
+---
+description: Root cause analysis — hypotheses, debug path, and fix for a bug
+---
+
 # Command: /debug
 
 ## Description
@@ -5,12 +9,6 @@ Reasoning-based debugging assistant. Helps identify the root cause of a bug or u
 
 ## Agent
 `dev-architect` → load from `agents/dev-architect.md`
-
-## Skills
-None.
-
-## Tools
-None.
 
 ## Execution Steps
 1. Read the bug description, error message, and any relevant code or context provided

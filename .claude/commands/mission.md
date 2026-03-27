@@ -1,3 +1,7 @@
+---
+description: Break a feature into prioritized, sized tasks with acceptance criteria
+---
+
 # Command: /mission
 
 ## Description
@@ -20,7 +24,6 @@ Break a feature or project into prioritized, sized development tasks with accept
 5. If yes: use `TodoWrite` to add each task
 
 ## Output Format
-Follow mission-control agent output structure:
 - Epics
 - Tasks (with size, priority, acceptance criteria, dependencies)
 - Dependencies Map

@@ -1,3 +1,7 @@
+---
+description: First-time setup — choose your rider, name your assistant, set your stack
+---
+
 # Command: /henshin
 
 ## Description

@@ -1,3 +1,7 @@
+---
+description: Stress-test an idea — find fatal flaws, get a proceed/pivot/kill verdict
+---
+
 # Command: /validate
 
 ## Description
@@ -8,9 +12,6 @@ Stress-test an existing idea to find fatal flaws and get a clear proceed/pivot/k
 
 ## Skills
 `validate-idea` → load from `skills/validate-idea.md`
-
-## Tools
-None.
 
 ## Execution Steps
 1. Read the user's idea or description

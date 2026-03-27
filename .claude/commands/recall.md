@@ -1,13 +1,11 @@
+---
+description: Search past sessions by topic, keyword, or date
+---
+
 # Command: /recall
 
 ## Description
 Search past conversations by topic, keyword, or date. Answers questions about previous sessions in context.
-
-## Agent
-None — runs directly.
-
-## Skills
-None.
 
 ## Tools
 - `Read` — reads memory/conversations/index.md and specific conversation files

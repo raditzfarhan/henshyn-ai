@@ -1,3 +1,7 @@
+---
+description: Explore and develop a rough idea into something worth evaluating
+---
+
 # Command: /wish
 
 ## Description
@@ -9,9 +13,6 @@ Explore and expand a new idea. Takes a rough concept and develops it into someth
 ## Skills
 `imagine` → load from `skills/imagine.md`
 
-## Tools
-None.
-
 ## Execution Steps
 1. Read the user's input (the idea, however rough)
 2. Apply `imagine` skill: reframe the problem 3 ways, generate 10 raw ideas, cluster, pick top 3
@@ -19,7 +20,6 @@ None.
 4. Display full output
 
 ## Output Format
-Follow wish-analyst agent output structure:
 - Problem
 - Solution
 - Opportunity

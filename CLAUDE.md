@@ -21,9 +21,9 @@ If `memory/preferences.md` is empty (first run), say: "Looks like we haven't set
 **Convention:** Any message starting with `/` is a command.
 
 1. Extract the command name: `/foo bar baz` → command is `foo`, arguments are `bar baz`
-2. Load `commands/foo.md`
+2. Load `.claude/commands/foo.md`
 3. Execute the command following the instructions in that file
-4. If `commands/foo.md` does not exist:
+4. If `.claude/commands/foo.md` does not exist:
    → "No command found for /foo. Available commands: /henshin /wish /validate /proposal /arch /name /review /workflow /mission /form /scan /sprint /debug /docs /standup /recall /learn /evolve"
 
 ---
@@ -34,7 +34,7 @@ Every command follows this flow:
 
 ```
 1. Load memory context (see Memory Load Order below)
-2. Load commands/{name}.md
+2. Load .claude/commands/{name}.md
 3. Load the specified agent from agents/
 4. Load the specified skills from skills/
 5. Apply active personality overlay

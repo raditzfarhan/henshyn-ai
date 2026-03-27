@@ -1,16 +1,11 @@
+---
+description: Run a named multi-step workflow that chains agents in sequence
+---
+
 # Command: /workflow
 
 ## Description
 Run a multi-step workflow that chains multiple agents in sequence. Each workflow is defined in `workflows/`.
-
-## Agent
-Defined per workflow file.
-
-## Skills
-Defined per workflow file.
-
-## Tools
-None directly — delegated to workflow file.
 
 ## Execution Steps
 1. Extract the workflow name from the command argument: `/workflow {name}`

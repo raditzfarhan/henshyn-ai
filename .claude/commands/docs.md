@@ -1,3 +1,7 @@
+---
+description: Generate documentation for a feature, API, system, or workflow
+---
+
 # Command: /docs
 
 ## Description
@@ -5,12 +9,6 @@ Generate documentation for a feature, API, system, or workflow.
 
 ## Agent
 `dev-architect` → load from `agents/dev-architect.md`
-
-## Skills
-None.
-
-## Tools
-None.
 
 ## Execution Steps
 1. Read what needs documenting and the target audience (developer? end user? API consumer?)

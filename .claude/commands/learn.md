@@ -1,13 +1,11 @@
+---
+description: Teach the assistant a preference, correction, or pattern to remember
+---
+
 # Command: /learn
 
 ## Description
 Explicitly teach the assistant something. Stores it in memory/learnings.md and applies immediately.
-
-## Agent
-None — runs directly.
-
-## Skills
-None.
 
 ## Tools
 - `Write` / `Edit` — appends to memory/learnings.md

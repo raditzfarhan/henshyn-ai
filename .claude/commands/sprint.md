@@ -1,3 +1,7 @@
+---
+description: Plan a focused week of work from your active backlog
+---
+
 # Command: /sprint
 
 ## Description
