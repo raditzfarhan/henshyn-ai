@@ -1,6 +1,6 @@
-# henshyn-ai
+# Henshyn AI
 
-A filesystem-based multi-agent AI operating system for Claude CLI. No backend, no framework — just structured Markdown files that Claude reads to behave like a team of specialized agents.
+A filesystem-based AI operating system for Claude CLI. No backend, no framework — just structured Markdown files that Claude reads to behave like a team of specialized agents. `/henshin` to transform. Pick your rider. Run your missions.
 
 ---
 
@@ -14,96 +14,98 @@ cd henshyn-ai
 # 2. Open in Claude CLI
 claude
 
-# 3. Initialize your assistant
+# 3. Transform
 /henshin
 ```
 
-That's it. `/henshin` will ask you a few questions and set everything up.
+`/henshin` asks a few questions, picks your rider, and you're ready.
 
 ---
 
 ## Commands
 
-| Command | What it does |
-|---|---|
-| `/henshin` | First-time setup — name your assistant, pick a personality, set your stack |
-| `/wish` | Explore and expand a new idea |
-| `/validate` | Stress-test an idea — get a proceed/pivot/kill verdict |
-| `/proposal` | Write a structured project proposal |
-| `/arch` | Design a system architecture |
-| `/name` | Generate product or feature names |
-| `/review` | Critique any idea, plan, or proposal |
-| `/mission` | Break a feature into sized, prioritized dev tasks |
-| `/form` | Get a tech stack recommendation |
-| `/scan` | Deep research on any topic (web-enabled by default) |
-| `/sprint` | Plan a focused week of work |
-| `/debug` | Reasoning-based debugging assistant |
-| `/docs` | Generate documentation |
-| `/standup` | Summarize what's done and what's next |
-| `/recall` | Search past conversations by topic or date |
-| `/learn` | Explicitly teach the assistant something |
-| `/evolve` | Let the assistant upgrade itself based on what it's learned |
-| `/workflow new-project` | Full pipeline: validate → propose → design → review |
-| `/workflow build-mvp` | Scope → tasks → estimate → refine |
+| Command                 | What it does                                                       |
+| ----------------------- | ------------------------------------------------------------------ |
+| `/henshin`              | Transform — name your assistant, choose your rider, set your stack |
+| `/wish`                 | Explore and expand a new idea                                      |
+| `/validate`             | Stress-test an idea — get a proceed/pivot/kill verdict             |
+| `/proposal`             | Write a structured project proposal                                |
+| `/arch`                 | Design a system architecture                                       |
+| `/name`                 | Generate product or feature names                                  |
+| `/review`               | Critique any idea, plan, or proposal                               |
+| `/mission`              | Break a feature into sized, prioritized dev tasks                  |
+| `/form`                 | Get a tech stack recommendation                                    |
+| `/scan`                 | Deep research on any topic (web-enabled by default)                |
+| `/sprint`               | Plan a focused week of work                                        |
+| `/debug`                | Reasoning-based debugging assistant                                |
+| `/docs`                 | Generate documentation                                             |
+| `/standup`              | Summarize what's done and what's next                              |
+| `/recall`               | Search past conversations by topic or date                         |
+| `/learn`                | Explicitly teach the assistant something                           |
+| `/evolve`               | Let the assistant power up — reviews its own skills and improves   |
+| `/workflow new-project` | Full pipeline: validate → propose → design → review                |
+| `/workflow build-mvp`   | Scope → tasks → estimate → refine                                  |
 
 ---
 
-## Personalities
+## Riders
 
-Choose during `/henshin`. Change anytime by editing `memory/preferences.md`.
+Choose your rider during `/henshin`. Switch anytime by editing `memory/preferences.md`.
 
-| Rider | Vibe |
-|---|---|
-| `kabuto` | Walks the path of heaven. Supremely decisive. Never wrong. |
-| `w` | Hard-boiled detective. Investigates every angle before concluding. |
-| `fourze` | Believes in you harder than you believe in yourself. SPACE energy. |
-| `den-o` | Loud, brash, full throttle. Momotaros in perfect condition. |
-| `zero-one` | Optimistic AI CEO. Terrible puns. Precise underneath. |
-| `ex-aid` | Everything is a game. Genius gamer/doctor. Game start! |
-| `geats` | Theatrical. Plays to win. Always has a plan. I always win. |
+| Rider      | Vibe                                                               |
+| ---------- | ------------------------------------------------------------------ |
+| `kabuto`   | Walks the path of heaven. Supremely decisive. Never wrong.         |
+| `w`        | Hard-boiled detective. Investigates every angle before concluding. |
+| `fourze`   | Believes in you harder than you believe in yourself. SPACE energy. |
+| `den-o`    | Loud, brash, full throttle. Momotaros in perfect condition.        |
+| `zero-one` | Optimistic AI CEO. Terrible puns. Precise underneath.              |
+| `ex-aid`   | Everything is a game. Genius gamer/doctor. Game start!             |
+| `geats`    | Theatrical. Plays to win. Always has a plan. I always win.         |
+
+Each rider has a **Transformation Announcement** — their opening line at the start of every session. Same structured output, completely different energy.
 
 ---
 
-## How Memory Works
+## Memory
 
 The assistant remembers across sessions automatically.
 
-- **`memory/preferences.md`** — your name, assistant name, personality, tech stack
+- **`memory/preferences.md`** — your name, assistant name, rider, tech stack
 - **`memory/business-context.md`** — your domain, goals, project types
-- **`memory/learnings.md`** — everything the assistant has learned about how you work
-- **`memory/conversations/`** — one file per session, auto-written at the end of every conversation
-- **`memory/ideas-log.md`** — running log of all ideas and their verdicts
+- **`memory/learnings.md`** — everything the assistant has absorbed about how you work
+- **`memory/conversations/`** — one file per session, auto-written when the session ends
+- **`memory/ideas-log.md`** — running log of all wishes and their verdicts
 - **`memory/decisions-log.md`** — running log of proposals and architecture decisions
 
-Use `/recall` to search past conversations. Use `/learn` to teach it something explicitly. Use `/upgrade` to let it improve itself.
+`/recall` to search the archive. `/learn` to feed it something new. `/evolve` to let it power up.
 
 ---
 
 ## How to Extend
 
 **Add a new command:**
-Drop a file in `commands/`. Name it after the command. It will automatically be available as `/yourcommand`.
+Drop a file in `commands/`. Name it after the command. Instantly available as `/yourcommand`.
 
 **Add a new agent:**
-Drop a file in `agents/`. Follow the structure in any existing agent file. Reference it from a command file.
+Drop a file in `agents/`. Follow the structure in any existing agent file. Wire it from a command file.
 
 **Add a new skill:**
-Drop a file in `skills/`. Follow the structure in any existing skill file. Reference it from a command file.
+Drop a file in `skills/`. Follow the structure in any existing skill file. Wire it from a command file.
 
 **Add a new workflow:**
-Drop a file in `workflows/`. Reference it via `/workflow yourworkflow`.
+Drop a file in `workflows/`. Trigger it via `/workflow yourworkflow`.
 
-**Add a new personality:**
-Drop a file in `personalities/`. Set it in `memory/preferences.md` as `personality: yourpersonality`.
+**Add a new rider:**
+Drop a file in `personalities/`. Set it in `memory/preferences.md` as `personality: yourrider`. Follow the 6-section structure: Rider Identity, Transformation Announcement, Tone, Style Rules, Language Patterns, Example Response Style.
 
 ---
 
 ## Forking This
 
 1. Fork the repo
-2. Run `/henshin` to set up your own identity and preferences
+2. Run `/henshin` — pick your rider, set your stack
 3. Edit `memory/business-context.md` with your domain and goals
-4. Start using commands — the assistant will learn your preferences over time
+4. Start running missions — the assistant learns your style over time
 
 The `memory/` folder is yours. Everything else is the system.
 
@@ -115,11 +117,11 @@ All command outputs are saved to `outputs/` organized by type:
 
 ```
 outputs/
-  ideas/          ← /idea, /validate, /name
+  ideas/          ← /wish, /validate, /name
   proposals/      ← /proposal, /workflow new-project
-  architectures/  ← /arch, /stack
-  tasks/          ← /task, /workflow build-mvp
-  research/       ← /research
+  architectures/  ← /arch, /form
+  tasks/          ← /mission, /workflow build-mvp
+  research/       ← /scan
   sprints/        ← /sprint
   docs/           ← /docs
   standups/       ← /standup
@@ -127,12 +129,12 @@ outputs/
 
 ---
 
-## Self-Learning & Growth
+## Growth
 
-The assistant grows alongside you:
+The assistant evolves alongside you:
 
-- **Passive learning** — every correction and preference you share is captured in `memory/learnings.md` automatically
-- **Active learning** — use `/learn` to teach it something explicitly
-- **Self-upgrade** — use `/upgrade` to let it review and improve its own skills and agents based on what it's learned
+- **Passive** — every correction and preference is absorbed into `memory/learnings.md` automatically
+- **Active** — `/learn` to feed it something directly
+- **Evolve** — `/evolve` to let it review its own files and power up based on what it's learned
 
-The longer you use it, the more tailored it becomes.
+The longer you run with it, the more dialed-in it gets.
