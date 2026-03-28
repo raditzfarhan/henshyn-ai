@@ -1,0 +1,10 @@
+# Runtime memory (generated during use)
+# Single * does not cross directory boundaries — memory/templates/ is NOT matched here.
+# Do NOT change memory/*.md to memory/** — that would ignore templates/ too.
+memory/*.md
+memory/conversations/
+
+# Runtime outputs — ignore content files, keep subfolder .gitkeep files
+outputs/**
+!outputs/*/
+!outputs/*/.gitkeep

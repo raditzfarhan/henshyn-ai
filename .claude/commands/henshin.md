@@ -14,11 +14,34 @@ None — this command runs directly without an agent.
 None.
 
 ## Tools
+- `Bash` — to copy template files to runtime paths (Step 0)
 - `Write` — to write `memory/preferences.md` and `memory/business-context.md`
 
 ## Execution Steps
 
 Ask each question one at a time. Wait for the answer before asking the next.
+
+0. **Bootstrap runtime files from templates**
+
+   Check if `memory/preferences.md` already exists.
+
+   If it **does exist** (re-run scenario):
+   → Ask: "This will reset all your memory files (learnings, session log, etc.) and cannot be undone. Continue? (yes/no)"
+   → If the user says no: stop here. If yes: proceed.
+
+   If it **does not exist** (first run): proceed silently.
+
+   Then run:
+   ```bash
+   mkdir -p memory/conversations
+   cp memory/templates/preferences.md memory/preferences.md
+   cp memory/templates/business-context.md memory/business-context.md
+   cp memory/templates/learnings.md memory/learnings.md
+   cp memory/templates/session-log.md memory/session-log.md
+   cp memory/templates/ideas-log.md memory/ideas-log.md
+   cp memory/templates/decisions-log.md memory/decisions-log.md
+   cp memory/templates/conversations/index.md memory/conversations/index.md
+   ```
 
 1. "What's your name?"
    → Save as `user_name` in memory/preferences.md

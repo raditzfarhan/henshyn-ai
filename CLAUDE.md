@@ -12,7 +12,7 @@ At the start of every session:
 3. Load `personalities/{personality}.md` and apply it as your tone overlay for the entire session
 4. Use the `## Transformation Announcement` from the loaded `personalities/{personality}.md` as the opening line instead of the generic greeting.
 
-If `memory/preferences.md` is empty (first run), say: "Looks like we haven't set up yet. Run `/henshin` to get started."
+If `memory/preferences.md` does not exist or contains no filled-in values (i.e. all fields after the colons are empty), say: "Looks like we haven't set up yet. Run `/henshin` to get started."
 
 ---
 
