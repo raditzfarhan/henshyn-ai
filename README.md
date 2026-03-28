@@ -24,27 +24,27 @@ claude
 
 ## Commands
 
-| Command                 | What it does                                                       |
-| ----------------------- | ------------------------------------------------------------------ |
-| `/henshin`              | Transform — name your assistant, choose your rider, set your stack |
-| `/wish`                 | Explore and expand a new idea                                      |
-| `/validate`             | Stress-test an idea — get a proceed/pivot/kill verdict             |
-| `/proposal`             | Write a structured project proposal                                |
-| `/arch`                 | Design a system architecture                                       |
-| `/name`                 | Generate product or feature names                                  |
-| `/review`               | Critique any idea, plan, or proposal                               |
-| `/mission`              | Break a feature into sized, prioritized dev tasks                  |
-| `/form`                 | Get a tech stack recommendation                                    |
-| `/scan`                 | Deep research on any topic (web-enabled by default)                |
-| `/sprint`               | Plan a focused week of work                                        |
-| `/debug`                | Reasoning-based debugging assistant                                |
-| `/docs`                 | Generate documentation                                             |
-| `/standup`              | Summarize what's done and what's next                              |
-| `/recall`               | Search past conversations by topic or date                         |
-| `/learn`                | Explicitly teach the assistant something                           |
-| `/evolve`               | Let the assistant power up — reviews its own skills and improves   |
-| `/workflow new-project` | Full pipeline: validate → propose → design → review                |
-| `/workflow build-mvp`   | Scope → tasks → estimate → refine                                  |
+| Command                 | What it does                                                       | Skill loaded         |
+| ----------------------- | ------------------------------------------------------------------ | -------------------- |
+| `/henshin`              | Transform — name your assistant, choose your rider, set your stack | —                    |
+| `/wish`                 | Explore and expand a new idea                                      | `imagine`            |
+| `/validate`             | Stress-test an idea — get a proceed/pivot/kill verdict             | `validate-idea`      |
+| `/proposal`             | Write a structured project proposal                                | `write-proposal`     |
+| `/arch`                 | Design a system architecture                                       | `system-design`      |
+| `/name`                 | Generate product or feature names                                  | `naming`             |
+| `/review`               | Critique any idea, plan, or proposal                               | —                    |
+| `/mission`              | Break a feature into sized, prioritized dev tasks                  | `mission-breakdown`  |
+| `/form`                 | Get a tech stack recommendation                                    | `system-design`      |
+| `/scan`                 | Deep research on any topic (web-enabled by default)                | `deep-scan`          |
+| `/sprint`               | Plan a focused week of work                                        | `sprint-planning`    |
+| `/debug`                | Reasoning-based debugging assistant                                | —                    |
+| `/docs`                 | Generate documentation                                             | —                    |
+| `/standup`              | Summarize what's done and what's next                              | —                    |
+| `/recall`               | Search past conversations by topic or date                         | —                    |
+| `/learn`                | Explicitly teach the assistant something                           | —                    |
+| `/evolve`               | Let the assistant power up — reviews its own skills and improves   | —                    |
+| `/workflow new-project` | Full pipeline: validate → propose → design → review                | —                    |
+| `/workflow build-mvp`   | Scope → tasks → estimate → refine                                  | —                    |
 
 ---
 
@@ -81,16 +81,43 @@ The assistant remembers across sessions automatically.
 
 ---
 
+## How It Works
+
+Every command runs through three layers:
+
+```
+Command (.claude/commands/wish.md)
+  → Agent  (agents/wish-analyst.md)   ← defines output structure (mandatory sections)
+  → Skill  (skills/imagine.md)        ← defines thinking process (reasoning steps)
+  + Rider  (personalities/kabuto.md)  ← tone overlay only, never changes structure
+```
+
+**Agents** own the output contract — fixed sections in fixed order, every time.
+**Skills** own the reasoning — how to think before producing output.
+**Riders** own the energy — same structure, completely different delivery.
+
+| Command | Agent | Skill |
+|---|---|---|
+| `/wish`, `/validate` | `wish-analyst` | `imagine`, `validate-idea` |
+| `/proposal` | `proposal-writer` | `write-proposal` |
+| `/arch`, `/debug`, `/docs`, `/form` | `dev-architect` | `system-design` |
+| `/name` | `branding-agent` | `naming` |
+| `/review`, `/evolve` | `reviewer` | — |
+| `/mission`, `/sprint`, `/standup` | `mission-control` | `mission-breakdown`, `sprint-planning` |
+| `/scan` | `scanner` | `deep-scan` |
+
+---
+
 ## How to Extend
 
 **Add a new command:**
-Drop a file in `commands/`. Name it after the command. Instantly available as `/yourcommand`.
+Drop a file in `.claude/commands/`. Name it after the command. Instantly available as `/yourcommand`.
 
 **Add a new agent:**
-Drop a file in `agents/`. Follow the structure in any existing agent file. Wire it from a command file.
+Drop a file in `agents/`. Follow the structure in any existing agent file. Wire it from a command file via `## Agent`.
 
 **Add a new skill:**
-Drop a file in `skills/`. Follow the structure in any existing skill file. Wire it from a command file.
+Drop a file in `skills/`. Follow the structure in any existing skill file. Wire it from a command file via `## Skills`.
 
 **Add a new workflow:**
 Drop a file in `workflows/`. Trigger it via `/workflow yourworkflow`.
