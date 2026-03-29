@@ -117,7 +117,7 @@ Whenever the user:
 - Shares domain knowledge ("in our industry, X means Y")
 - Gives process feedback ("stop doing X", "always do Y when Z")
 
-→ Immediately append to `memory/learnings.md`: `[YYYY-MM-DD] {category}: {content}`
+→ Immediately append to `memory/learnings.md`: `[YYYY-MM-DD HH:MM] {category}: {content}`
 → Categories: `preference` | `correction` | `domain-knowledge` | `pattern` | `upgrade`
 → Apply the learning immediately. Do not wait until next session.
 
