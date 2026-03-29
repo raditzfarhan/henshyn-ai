@@ -29,7 +29,7 @@ claude
 | `/henshin`              | Transform — name your assistant, choose your rider, set your stack | —                    |
 | `/wish`                 | Explore and expand a new idea                                      | `imagine`            |
 | `/validate`             | Stress-test an idea — get a proceed/pivot/kill verdict             | `validate-idea`      |
-| `/proposal`             | Write a structured project proposal                                | `write-proposal`     |
+| `/proposal`             | Write a structured project proposal with full cost breakdown       | `write-proposal`, `cost-breakdown` |
 | `/arch`                 | Design a system architecture                                       | `system-design`      |
 | `/name`                 | Generate product or feature names                                  | `naming`             |
 | `/review`               | Critique any idea, plan, or proposal                               | —                    |
@@ -99,7 +99,7 @@ Command (.claude/commands/wish.md)
 | Command | Agent | Skill |
 |---|---|---|
 | `/wish`, `/validate` | `wish-analyst` | `imagine`, `validate-idea` |
-| `/proposal` | `proposal-writer` | `write-proposal` |
+| `/proposal` | `proposal-writer` | `write-proposal`, `cost-breakdown` |
 | `/arch`, `/debug`, `/docs`, `/form` | `dev-architect` | `system-design` |
 | `/name` | `branding-agent` | `naming` |
 | `/review`, `/evolve` | `reviewer` | — |
