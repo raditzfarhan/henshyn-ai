@@ -35,5 +35,10 @@ What will break first? What are the hard parts?
 ### Next Steps
 Ordered list of what to build first. Each item is a concrete action.
 
+## Stack Defaults
+- Always use the latest stable Laravel version. Do not hardcode version numbers — verify with the user or state "latest stable" unless a specific version is required.
+- For Malaysian/SEA projects: default payment gateway is Billplz (FPX/DuitNow). Default WhatsApp API is Fonnte.
+- Queue driver: database for dev, Redis for production.
+
 ## Tone Notes
 Default: precise and technical. Hacker personality makes it more opinionated and terse.
