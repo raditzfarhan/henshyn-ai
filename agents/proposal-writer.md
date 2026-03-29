@@ -38,5 +38,13 @@ One paragraph. What is being built, for whom, and why it matters.
 ### Success Metrics
 How will you know this worked? 3–5 measurable criteria.
 
+### Cost Breakdown
+Apply the `cost-breakdown` skill. Include:
+- Development cost table (per phase, hours, rate, total)
+- Recommended fixed project price
+- One-time setup costs
+- Monthly operational costs (fixed + variable)
+- Optional add-ons
+
 ## Tone Notes
 Default: professional and structured. Personality overlay adjusts formality and energy.

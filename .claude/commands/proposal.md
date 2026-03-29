@@ -12,11 +12,13 @@ Write a structured project proposal for an idea or feature.
 
 ## Skills
 `write-proposal` → load from `skills/write-proposal.md`
+`cost-breakdown` → load from `skills/cost-breakdown.md`
 
 ## Execution Steps
 1. Read the user's project description or reference a previous idea output
 2. Apply `write-proposal` skill: goal → scope → stakeholders → stack → phases
-3. Apply `proposal-writer` agent output structure
+3. Apply `cost-breakdown` skill: hours → rate → development cost → setup → operational → add-ons
+4. Apply `proposal-writer` agent output structure
 
 ## Output Format
 - Executive Summary
@@ -25,6 +27,7 @@ Write a structured project proposal for an idea or feature.
 - Tech Stack
 - Timeline
 - Success Metrics
+- Cost Breakdown
 
 ## Auto-save
 - `outputs/proposals/YYYY-MM-DD-{project-slug}.md` — full output
