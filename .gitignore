@@ -8,3 +8,5 @@ memory/conversations/
 outputs/**
 !outputs/*/
 !outputs/*/.gitkeep
+
+node_modules/
