@@ -73,6 +73,38 @@ export function makeDivider(borderColor) {
   });
 }
 
+// Render a fenced code block as a styled single-cell table
+// font: Courier New, grey background, thin border
+export function makeCodeBlock(lines) {
+  const cellParagraphs = lines.length > 0
+    ? lines.map(line => new Paragraph({
+        children: [new TextRun({ text: line, font: "Courier New", size: 18 })],
+        spacing: { after: 0 },
+      }))
+    : [new Paragraph({ children: [new TextRun({ text: "", size: 18 })] })];
+
+  return new Table({
+    rows: [
+      new TableRow({
+        children: [
+          new TableCell({
+            children: cellParagraphs,
+            shading: { type: ShadingType.SOLID, color: "f0f0f0", fill: "f0f0f0" },
+            borders: {
+              top:    { style: BorderStyle.SINGLE, size: 4, color: "cccccc" },
+              bottom: { style: BorderStyle.SINGLE, size: 4, color: "cccccc" },
+              left:   { style: BorderStyle.SINGLE, size: 4, color: "cccccc" },
+              right:  { style: BorderStyle.SINGLE, size: 4, color: "cccccc" },
+            },
+            margins: { top: 80, bottom: 80, left: 120, right: 120 },
+          }),
+        ],
+      }),
+    ],
+    width: { size: 100, type: WidthType.PERCENTAGE },
+  });
+}
+
 // Build a docx Table from a 2D array of cell strings
 // allRows[0] = header row, rest = data rows
 // colors: { header, headerText, rowAlt }
