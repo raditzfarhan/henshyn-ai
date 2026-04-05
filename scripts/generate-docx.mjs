@@ -2,7 +2,16 @@
 import { readFileSync, writeFileSync, existsSync } from "fs";
 import { resolve, dirname, basename, extname, join } from "path";
 import { fileURLToPath } from "url";
-import { Packer } from "docx";
+
+// Guard: check docx package is installed before attempting import
+try {
+  await import("docx");
+} catch {
+  console.error("Error: 'docx' package not found. Run `npm install` first.");
+  process.exit(1);
+}
+
+const { Packer } = await import("docx");
 
 const filePath = process.argv[2];
 

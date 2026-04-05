@@ -18,6 +18,12 @@ claude
 /henshin
 ```
 
+**Optional: docx export support**
+```bash
+npm install
+```
+Only needed if you want to export outputs to `.docx`. Without it, all other commands work fine.
+
 `/henshin` asks a few questions, picks your rider, and you're ready.
 
 ---

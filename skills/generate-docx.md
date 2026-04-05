@@ -12,6 +12,16 @@ When the user asks to:
 
 ## Process
 
+### 0. Check dependencies
+Before doing anything, verify that `node_modules/` exists:
+```bash
+ls node_modules/docx 2>/dev/null || echo "NOT INSTALLED"
+```
+If not installed, stop and tell the user:
+> "The `docx` package is not installed. Run `npm install` first, then try again."
+
+Do not proceed further until the package is confirmed present.
+
 ### 1. Identify the source file
 - If the user provides an explicit path, use it directly.
 - If the user describes the file (e.g., "the waterproof proposal", "last sprint plan"):
