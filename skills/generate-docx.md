@@ -39,6 +39,10 @@ Tell the user the exact path of the generated `.docx` file.
 
 ## Notes
 - The `.docx` is saved next to the source `.md` (same folder, same base name)
+- Mermaid code blocks (` ```mermaid `) are automatically rendered to PNG via Kroki.io and embedded as images
+- Untagged code blocks (` ``` `) are skipped — assumed to be ASCII art diagrams
+- Tagged code blocks (` ```php `, ` ```js `, etc.) render as styled monospace blocks
+- Kroki.io requires internet access at docx generation time
 - Type-specific templates are applied automatically:
   - `outputs/proposals/` → `scripts/templates/proposal.mjs` (branded: title page, dark navy/blue)
   - All other types → `scripts/templates/universal.mjs` (neutral style)

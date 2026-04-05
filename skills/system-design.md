@@ -10,5 +10,7 @@ Translate product requirements into a concrete technical architecture.
 4. **Identify bottlenecks** — what will break first? What's the hard engineering problem?
 5. **Recommend stack** — pick specific tools. "Use a database" is not a recommendation. "Use PostgreSQL because X" is.
 
+6. **Diagrams:** For every diagram, output two consecutive blocks — an untagged ASCII art block first (for plain-text readability), then a ` ```mermaid ` block with the equivalent diagram. Use `graph TD` for architecture flows, `sequenceDiagram` for data flows, `flowchart LR` for horizontal pipelines.
+
 ## Output Format
 Follow the dev-architect agent output structure exactly.
