@@ -10,3 +10,6 @@ outputs/**
 !outputs/*/.gitkeep
 
 node_modules/
+
+# Generated docs — specs and plans
+docs/
