@@ -1,5 +1,11 @@
 # Henshyn AI
 
+![Version](https://img.shields.io/badge/version-1.0.0-blue)
+![Platform](https://img.shields.io/badge/platform-Claude%20CLI-blueviolet)
+![Node](https://img.shields.io/badge/node-%3E%3D18-green)
+![No Backend](https://img.shields.io/badge/backend-none-lightgrey)
+![License](https://img.shields.io/badge/license-MIT-yellow)
+
 A filesystem-based AI operating system for Claude CLI. No backend, no framework — just structured Markdown files that Claude reads to behave like a team of specialized agents. `/henshin` to transform. Pick your rider. Run your missions.
 
 ---
