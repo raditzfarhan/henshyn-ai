@@ -2,8 +2,47 @@
 // Shared markdown parsing and docx block builders used by all templates.
 import {
   Paragraph, Table, TableRow, TableCell,
-  TextRun, WidthType, ShadingType, BorderStyle,
+  TextRun, WidthType, ShadingType, BorderStyle, ImageRun,
 } from "docx";
+
+// Render Mermaid syntax to PNG via Kroki.io
+// On failure: returns a placeholder Paragraph instead of throwing
+export async function renderMermaid(syntax) {
+  try {
+    const res = await fetch("https://kroki.io/mermaid/png", {
+      method: "POST",
+      headers: { "Content-Type": "text/plain" },
+      body: syntax,
+    });
+    if (!res.ok) throw new Error(`Kroki returned ${res.status}`);
+    const contentType = res.headers.get("content-type") || "";
+    if (!contentType.includes("image/png")) {
+      throw new Error(`Unexpected content-type: ${contentType}`);
+    }
+    const buffer = Buffer.from(await res.arrayBuffer());
+    return new Paragraph({
+      children: [
+        new ImageRun({
+          data: buffer,
+          type: "png",
+          transformation: { width: 600, height: 400 },
+        }),
+      ],
+      spacing: { after: 200 },
+    });
+  } catch (err) {
+    console.error(`[generate-docx] Mermaid render failed: ${err.message}`);
+    return new Paragraph({
+      children: [new TextRun({
+        text: "[Diagram rendering failed — check Mermaid syntax or internet connection]",
+        size: 22,
+        italics: true,
+        color: "888888",
+      })],
+      spacing: { after: 100 },
+    });
+  }
+}
 
 // Parse inline markdown: **bold**, *italic*, plain text
 export function parseInline(text) {
