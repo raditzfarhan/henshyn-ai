@@ -143,17 +143,57 @@ export function makeTable(allRows, colors) {
 // headingFn(text, level) → Paragraph  — provided by each template for custom styling
 // tableColors → { header, headerText, rowAlt }
 // borderColor → hex string for dividers
+// Three-way code block routing:
+//   ```mermaid → rendered PNG via Kroki.io
+//   ```<tag>   → styled code table (Courier New, grey background)
+//   ```        → skipped (assumed ASCII art diagram)
 // Numbered lists are rendered as bullets (avoids docx Document-level numbering config complexity).
-// Unsupported elements (code blocks, blockquotes, images) → plain paragraph.
-export function parseMarkdown(content, headingFn, tableColors, borderColor) {
+export async function parseMarkdown(content, headingFn, tableColors, borderColor) {
   const lines = content.split("\n");
   const elements = [];
   let tableBuffer = [];
   let inTable = false;
+  let inCodeBlock = false;
+  let codeTag = "";
+  let codeLines = [];
 
   for (const line of lines) {
     const trimmed = line.trim();
 
+    // Handle open/close of fenced code blocks
+    if (trimmed.startsWith("```")) {
+      if (!inCodeBlock) {
+        // Flush any in-progress table before entering code block
+        if (inTable) {
+          if (tableBuffer.length > 1) elements.push(makeTable(tableBuffer, tableColors));
+          tableBuffer = [];
+          inTable = false;
+        }
+        inCodeBlock = true;
+        codeTag = trimmed.slice(3).trim().toLowerCase();
+        codeLines = [];
+      } else {
+        // Closing fence — process the collected block
+        if (codeTag === "mermaid") {
+          elements.push(await renderMermaid(codeLines.join("\n")));
+        } else if (codeTag !== "") {
+          elements.push(makeCodeBlock(codeLines));
+        }
+        // No tag — skip (ASCII art)
+        inCodeBlock = false;
+        codeTag = "";
+        codeLines = [];
+      }
+      continue;
+    }
+
+    // Collect code block lines (preserve original indentation)
+    if (inCodeBlock) {
+      codeLines.push(line);
+      continue;
+    }
+
+    // Table detection
     if (trimmed.startsWith("|")) {
       if (/^\|[\s\-:|]+\|/.test(trimmed)) continue; // skip separator rows
       tableBuffer.push(trimmed.split("|").slice(1, -1).map(c => c.trim()));
@@ -174,10 +214,10 @@ export function parseMarkdown(content, headingFn, tableColors, borderColor) {
     if (trimmed.startsWith("# ")) { elements.push(headingFn(trimmed.slice(2), 1)); continue; }
     if (trimmed.startsWith("- ")) { elements.push(makeBullet(trimmed.slice(2))); continue; }
     if (/^\d+\.\s/.test(trimmed)) { elements.push(makeBullet(trimmed.replace(/^\d+\.\s/, ""))); continue; }
-    // Everything else (code blocks, blockquotes, horizontal rules, images) → plain paragraph
     elements.push(makeParagraph(trimmed));
   }
 
+  // Flush remaining table
   if (inTable && tableBuffer.length > 1) elements.push(makeTable(tableBuffer, tableColors));
   return elements;
 }
