@@ -45,6 +45,7 @@ claude
 | `/evolve`               | Let the assistant power up — reviews its own skills and improves   | —                    |
 | `/workflow new-project` | Full pipeline: validate → propose → design → review                | —                    |
 | `/workflow build-mvp`   | Scope → tasks → estimate → refine                                  | —                    |
+| "convert X to docx"     | Export any output file to a styled `.docx` (on demand, conversational) | `generate-docx`  |
 
 ---
 
@@ -103,6 +104,7 @@ Command (.claude/commands/wish.md)
 | `/arch`, `/debug`, `/docs`, `/form` | `dev-architect` | `system-design` |
 | `/name` | `branding-agent` | `naming` |
 | `/review`, `/evolve` | `reviewer` | — |
+| "convert X to docx" | — | `generate-docx` |
 | `/mission`, `/sprint`, `/standup` | `mission-control` | `mission-breakdown`, `sprint-planning` |
 | `/scan` | `scanner` | `deep-scan` |
 
@@ -140,7 +142,7 @@ The `memory/` folder is yours. Everything else is the system.
 
 ## Outputs
 
-All command outputs are saved to `outputs/` organized by type:
+All command outputs are saved to `outputs/` organized by type. Any output can be exported to `.docx` on demand — just ask "convert X to docx". The `generate-docx` skill picks the right template automatically (proposals get a branded layout; everything else gets a clean universal style).
 
 ```
 outputs/
