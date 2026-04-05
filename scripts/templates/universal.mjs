@@ -20,7 +20,7 @@ function makeHeading(text, level) {
   });
 }
 
-export function build(content, meta) {
+export async function build(content, meta) {
   return new Document({
     styles: { default: { document: { run: { font: "Calibri", size: 22 } } } },
     sections: [{
@@ -34,11 +34,11 @@ export function build(content, meta) {
           children: [new TextRun({ text: meta.date, size: 20, color: "888888" })],
           spacing: { after: 400 },
         }),
-        ...parseMarkdown(content, makeHeading, {
+        ...(await parseMarkdown(content, makeHeading, {
           header: COLORS.tableHeader,
           headerText: COLORS.tableHeaderText,
           rowAlt: COLORS.tableRowAlt,
-        }, COLORS.border),
+        }, COLORS.border)),
       ],
     }],
   });

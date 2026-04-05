@@ -66,7 +66,7 @@ try {
   templateModule = await import(`./templates/universal.mjs`);
 }
 
-const doc = templateModule.build(content, meta);
+const doc = await templateModule.build(content, meta);
 const buffer = await Packer.toBuffer(doc);
 
 // Write .docx next to the .md source file

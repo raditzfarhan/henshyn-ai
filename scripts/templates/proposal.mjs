@@ -25,7 +25,7 @@ function makeHeading(text, level) {
   });
 }
 
-export function build(content, meta) {
+export async function build(content, meta) {
   return new Document({
     styles: { default: { document: { run: { font: "Calibri", size: 22 } } } },
     sections: [{
@@ -57,11 +57,11 @@ export function build(content, meta) {
           spacing: { after: 200 },
         }),
         // Body — parsed from markdown
-        ...parseMarkdown(content, makeHeading, {
+        ...(await parseMarkdown(content, makeHeading, {
           header: COLORS.accent,
           headerText: COLORS.white,
           rowAlt: COLORS.gray,
-        }, COLORS.border),
+        }, COLORS.border)),
       ],
     }],
   });
