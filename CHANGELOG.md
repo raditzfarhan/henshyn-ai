@@ -6,6 +6,19 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [1.1.0] — 2026-04-05
+
+### Added
+- `/logo` command — on-demand SVG logo generation for any brand
+- `generate-logo` skill — derives brand spec (colors, icon concept, typography) and invokes script
+- `scripts/generate-logo.mjs` — generates 22 SVG files per run: icons (3 concepts × 3 shapes), wordmarks (bold, stacked), lockups (horizontal, vertical), emblem
+- Logo prompt after `/name` — asks to generate logos after user picks a name
+- Color psychology guide in skill — maps colors to brand signals (fintech, wellness, energy, etc.)
+- 3 icon concepts: Tag Wing, Invoice in Flight, T Lettermark with velocity arcs
+- SVG best practices: viewBox scalability, namespaced gradient IDs, semantic groups, `role="img"` accessibility
+
+---
+
 ## [1.0.0] — 2026-04-05
 
 ### Core System

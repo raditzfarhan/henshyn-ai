@@ -44,6 +44,7 @@ Only needed if you want to export outputs to `.docx`. Without it, all other comm
 | `/proposal`             | Write a structured project proposal with full cost breakdown       | `write-proposal`, `cost-breakdown` |
 | `/arch`                 | Design a system architecture                                       | `system-design`      |
 | `/name`                 | Generate product or feature names                                  | `naming`             |
+| `/logo`                 | Generate SVG logos for a brand — icons, wordmarks, lockups         | `generate-logo`      |
 | `/review`               | Critique any idea, plan, or proposal                               | —                    |
 | `/mission`              | Break a feature into sized, prioritized dev tasks                  | `mission-breakdown`  |
 | `/form`                 | Get a tech stack recommendation                                    | `system-design`      |
@@ -114,7 +115,7 @@ Command (.claude/commands/wish.md)
 | `/wish`, `/validate` | `wish-analyst` | `imagine`, `validate-idea` |
 | `/proposal` | `proposal-writer` | `write-proposal`, `cost-breakdown` |
 | `/arch`, `/debug`, `/docs`, `/form` | `dev-architect` | `system-design` |
-| `/name` | `branding-agent` | `naming` |
+| `/name`, `/logo` | `branding-agent` | `naming`, `generate-logo` |
 | `/review`, `/evolve` | `reviewer` | — |
 | "convert X to docx" | — | `generate-docx` |
 | `/mission`, `/sprint`, `/standup` | `mission-control` | `mission-breakdown`, `sprint-planning` |
