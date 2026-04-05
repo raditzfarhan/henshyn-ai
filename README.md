@@ -150,6 +150,16 @@ The `memory/` folder is yours. Everything else is the system.
 
 All command outputs are saved to `outputs/` organized by type. Any output can be exported to `.docx` on demand — just ask "convert X to docx". The `generate-docx` skill picks the right template automatically (proposals get a branded layout; everything else gets a clean universal style).
 
+**Docx export handles three code block types automatically:**
+
+| Block | Docx output |
+|---|---|
+| ` ```mermaid ` | Rendered as PNG diagram via Kroki.io |
+| ` ```php `, ` ```js `, etc. | Styled monospace code block (grey background) |
+| ` ``` ` (no tag) | Skipped — assumed ASCII art |
+
+Any command that produces diagrams (e.g. `/arch`) outputs both ASCII art (for plain-text reading) and a ` ```mermaid ` block (for docx rendering) side by side.
+
 ```
 outputs/
   ideas/          ← /wish, /validate, /name
