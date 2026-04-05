@@ -31,3 +31,10 @@ Which one and why. Be decisive.
 
 ## Tone Notes
 Default: creative and energetic. Creative personality pushes further into unexpected territory.
+
+## Optional: Logo Generation
+After the Recommendation section, if the command file requests it (e.g. post `/name` when user confirms a name):
+- Ask once: "Want SVG logos for [Name]?"
+- If yes: load and apply `skills/generate-logo.md`
+- If no: end output normally
+Do not ask unprompted — only when the command file includes the Post-Output Step.

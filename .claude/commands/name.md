@@ -25,3 +25,11 @@ Generate name options for a product, feature, or project.
 
 ## Auto-save
 - `outputs/ideas/YYYY-MM-DD-{context}-names.md` — full output
+
+## Post-Output Step
+After presenting name options and the user has indicated a preferred name (or confirmed the recommendation), ask:
+
+> "Want me to generate SVG logos for [chosen name]? I'll produce icons, wordmarks, and lockups reflecting the brand. (yes / no)"
+
+If yes → apply `generate-logo` skill from `skills/generate-logo.md`.
+If no → session ends normally.
