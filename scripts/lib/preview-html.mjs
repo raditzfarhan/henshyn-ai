@@ -352,7 +352,7 @@ export function generatePreviewHTML(brand, variants, generated, logoDir) {
       if (!prompt) { document.getElementById("refineInput").focus(); return; }
       // Escape for bash double-quoted string (project shell per CLAUDE.md is bash)
       const escaped = prompt.replace(/\\/g, "\\\\").replace(/"/g, '\\"');
-      const command = 'node scripts/refine-logo.mjs "' + LOGO_DIR + '/' + file + '" "' + escaped + '"';
+      const command = '/logo-refine "' + LOGO_DIR + '/' + file + '" "' + escaped + '"';
       document.getElementById("refineFallback").classList.remove("visible");
       document.getElementById("refineInput").value = "";
       try {
