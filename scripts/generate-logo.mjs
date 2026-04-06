@@ -1,8 +1,9 @@
 // scripts/generate-logo.mjs — SVG logo generator
 // Usage: node scripts/generate-logo.mjs <path-to-spec.json>
 import { readFileSync, writeFileSync, mkdirSync } from "fs";
-import { resolve, join, dirname } from "path";
+import { resolve, join, dirname, basename, relative } from "path";
 import { fileURLToPath } from "url";
+import { generatePreviewHTML } from "./lib/preview-html.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -319,5 +320,17 @@ const emblemPath = join(outDir, `${brand.slug}-emblem.svg`);
 writeFileSync(emblemPath, renderEmblem(variants[0]));
 generated.push(emblemPath);
 
+// Save spec.json alongside SVGs so refine-logo.mjs can find it.
+// `spec` is declared as `let spec` and parsed before SVG generation — it is in scope here.
+// Writing to the same path as the input spec (if they match) is safe: data is already in memory.
+writeFileSync(join(outDir, "spec.json"), JSON.stringify(spec, null, 2));
+
 console.log(`\nGenerated ${generated.length} SVG files → ${outDir.replace(process.cwd() + "/", "").replace(/\\/g, "/")}/`);
 generated.forEach(f => console.log(`  ${f.replace(process.cwd() + "\\", "").replace(process.cwd() + "/", "").replace(/\\/g, "/")}`));
+
+// ─── HTML PREVIEW ────────────────────────────────────────────────────
+const logoDir  = relative(process.cwd(), outDir).replace(/\\/g, "/");
+const htmlPath = join(outDir, "index.html");
+writeFileSync(htmlPath, generatePreviewHTML(brand, variants, generated, logoDir));
+console.log(`\n  index.html → open in browser to preview all logos`);
+
