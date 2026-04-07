@@ -6,6 +6,24 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [1.2.0] — 2026-04-07
+
+### Added
+- `/logo-refine` command — refine any SVG logo with a natural language prompt; saves result as a versioned file (`-vN.svg`), never overwrites the original
+- `scripts/regen-preview.mjs` — regenerate `index.html` from existing SVGs + `spec.json` without re-running full logo generation
+- `scripts/lib/preview-html.mjs` — shared HTML preview generator extracted from `generate-logo.mjs`; used by both generate and regen scripts
+- Select-and-refine UI in preview HTML — click any logo card to select it, type a prompt, get a `/logo-refine` command copied to clipboard
+- Light/dark theme toggle in all generated preview pages
+- Copy SVG source button on every logo card (works on `file://` via embedded `SVG_MAP`)
+- **Refined section** in preview — versioned files (`-vN.svg`) automatically appear in a dedicated section separate from originals
+- Dynamic card sizing in Refined section — lockup/wordmark refined files use wide card layout; icons use square card layout
+
+### Fixed
+- Regex escape bug in preview template — backslashes inside the JS template literal were being halved on output, crashing the entire `<script>` block and breaking theme toggle and refine panel simultaneously
+- Refined section grid width — was using icon-sized 160px minmax; now uses 280px to match lockup sizing
+
+---
+
 ## [1.1.0] — 2026-04-05
 
 ### Added
