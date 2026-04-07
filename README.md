@@ -1,6 +1,6 @@
 # Henshyn AI
 
-![Version](https://img.shields.io/badge/version-1.0.0-blue)
+![Version](https://img.shields.io/badge/version-1.2.0-blue)
 ![Platform](https://img.shields.io/badge/platform-Claude%20CLI-blueviolet)
 ![Node](https://img.shields.io/badge/node-%3E%3D18-green)
 ![No Backend](https://img.shields.io/badge/backend-none-lightgrey)
@@ -45,6 +45,7 @@ Only needed if you want to export outputs to `.docx`. Without it, all other comm
 | `/arch`                 | Design a system architecture                                       | `system-design`      |
 | `/name`                 | Generate product or feature names                                  | `naming`             |
 | `/logo`                 | Generate SVG logos for a brand — icons, wordmarks, lockups         | `generate-logo`      |
+| `/logo-refine`          | Refine any SVG logo with a natural language prompt — versioned, non-destructive | — |
 | `/review`               | Critique any idea, plan, or proposal                               | —                    |
 | `/mission`              | Break a feature into sized, prioritized dev tasks                  | `mission-breakdown`  |
 | `/form`                 | Get a tech stack recommendation                                    | `system-design`      |
@@ -115,7 +116,7 @@ Command (.claude/commands/wish.md)
 | `/wish`, `/validate` | `wish-analyst` | `imagine`, `validate-idea` |
 | `/proposal` | `proposal-writer` | `write-proposal`, `cost-breakdown` |
 | `/arch`, `/debug`, `/docs`, `/form` | `dev-architect` | `system-design` |
-| `/name`, `/logo` | `branding-agent` | `naming`, `generate-logo` |
+| `/name`, `/logo`, `/logo-refine` | `branding-agent` | `naming`, `generate-logo` |
 | `/review`, `/evolve` | `reviewer` | — |
 | "convert X to docx" | — | `generate-docx` |
 | `/mission`, `/sprint`, `/standup` | `mission-control` | `mission-breakdown`, `sprint-planning` |
@@ -177,6 +178,39 @@ outputs/
   sprints/        ← /sprint
   docs/           ← /docs
   standups/       ← /standup
+  logos/          ← /logo, /logo-refine
+    {slug}/
+      index.html              ← interactive preview (light/dark toggle, select & refine)
+      *.svg                   ← 22 files: icons, wordmarks, lockups, emblem
+      *-v{N}.svg              ← refined versions (appear in Refined section of preview)
+      spec.json               ← brand spec used to regen the preview
+```
+
+---
+
+## Logo Generation & Refinement
+
+`/logo` generates a full SVG logo set for any brand — 22 files across 3 style variants (minimal, bold, expressive), each with icons (square/rounded/circle), wordmarks, lockups, and an emblem.
+
+Every logo set ships with an **interactive HTML preview** (`index.html`) that runs entirely on `file://`:
+- Light/dark theme toggle
+- Copy SVG source button on every card
+- **Select & Refine** — click any logo, type a prompt, get a `/logo-refine` command copied to clipboard
+
+```bash
+# Generate a full set
+/logo
+
+# Refine a specific file
+/logo-refine "outputs/logos/tagifly/tagifly-bold-icon-square.svg" "replace the shape with wings"
+```
+
+`/logo-refine` saves the result as a versioned file (`-v2.svg`, `-v3.svg`, ...) alongside the original — never overwrites. Refined files appear in a dedicated **Refined** section in the preview. You can keep refining: a `v2` file refined becomes `v3`.
+
+To regenerate the preview after manual edits without re-running the full generator:
+
+```bash
+node scripts/regen-preview.mjs outputs/logos/{slug}
 ```
 
 ---
