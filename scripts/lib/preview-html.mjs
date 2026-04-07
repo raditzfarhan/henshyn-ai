@@ -69,8 +69,15 @@ export function generatePreviewHTML(brand, variants, generated, logoDir) {
     return parts.length > 1 ? `<span class="badge">${parts[1]}</span>` : "";
   }
 
-  const cards = (section) => section.files.map(f => `
-        <figure class="card ${section.imgClass}" data-file="${f}">
+  function refinedImgClass(f) {
+    if (f.includes("-lockup-") || f.includes("-wordmark-")) return "card-wide";
+    return "card-icon";
+  }
+
+  const cards = (section) => section.files.map(f => {
+    const cls = section.id === "refined" ? refinedImgClass(f) : section.imgClass;
+    return `
+        <figure class="card ${cls}" data-file="${f}">
           <div class="card-inner">
             <img src="${f}" alt="${f}" loading="lazy" />
             <button class="copy-btn" data-file="${f}" title="Copy SVG source">
@@ -81,7 +88,8 @@ export function generatePreviewHTML(brand, variants, generated, logoDir) {
             </button>
           </div>
           <figcaption>${variantTag(f)}<span class="card-label">${label(f)}</span></figcaption>
-        </figure>`).join("\n");
+        </figure>`;
+  }).join("\n");
 
   const sectionHTML = sections
     .filter(s => s.files.length > 0)
@@ -165,8 +173,8 @@ export function generatePreviewHTML(brand, variants, generated, logoDir) {
     .section-sub { font-size: 11px; color: var(--muted); letter-spacing: 0.06em; }
 
     .grid { display: grid; gap: 12px; }
-    .grid-icons, .grid-emblem, .grid-refined { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
-    .grid-wordmarks, .grid-lockups { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
+    .grid-icons, .grid-emblem { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
+    .grid-wordmarks, .grid-lockups, .grid-refined { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
 
     .card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; transition: border-color 0.2s, transform 0.2s, background 0.25s, box-shadow 0.2s; position: relative; cursor: pointer; }
     .card:hover { border-color: color-mix(in srgb, var(--accent) 40%, transparent); transform: translateY(-2px); background: var(--bg-hover); }
@@ -351,7 +359,7 @@ export function generatePreviewHTML(brand, variants, generated, logoDir) {
       const prompt = document.getElementById("refineInput").value.trim();
       if (!prompt) { document.getElementById("refineInput").focus(); return; }
       // Escape for bash double-quoted string (project shell per CLAUDE.md is bash)
-      const escaped = prompt.replace(/\\/g, "\\\\").replace(/"/g, '\\"');
+      const escaped = prompt.replace(/\\\\/g, "\\\\\\\\").replace(/"/g, '\\\\"');
       const command = '/logo-refine "' + LOGO_DIR + '/' + file + '" "' + escaped + '"';
       document.getElementById("refineFallback").classList.remove("visible");
       document.getElementById("refineInput").value = "";
