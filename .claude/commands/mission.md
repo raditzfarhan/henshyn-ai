@@ -11,7 +11,7 @@ Break a feature or project into prioritized, sized development tasks with accept
 `mission-control` → load from `agents/mission-control.md`
 
 ## Skills
-`mission-breakdown` → load from `skills/mission-breakdown.md`
+`mission-breakdown` → load from `skills/mission-breakdown/SKILL.md`
 
 ## Tools
 - `TodoWrite` — load approved tasks into the active todo list

@@ -1,7 +1,12 @@
-# Skill: Sprint Planning
+---
+name: sprint-planning
+description: Use when planning a focused week of work from an existing backlog — especially when the user wants to prioritize, time-box, and commit to a clear sprint goal.
+---
 
-## Purpose
-Plan a focused, achievable week of work from the backlog of ideas and tasks.
+# Sprint Planning
+
+## Overview
+Plan a focused, achievable week of work from the backlog. Fit only what fits — an overloaded sprint is a failed sprint before it starts.
 
 ## Process
 1. **Pull active work** — read `memory/ideas-log.md`, `memory/decisions-log.md`, and any recent task outputs. What's in flight?

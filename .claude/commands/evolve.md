@@ -23,7 +23,7 @@ Claude reviews its own skills and agents against accumulated learnings and propo
    - Are any patterns missing from skill processes?
 4. Present proposed changes as a numbered list:
    "I've identified {N} potential upgrades:
-   1. Update `skills/naming.md` step 2 — add 'made-up compound words' direction (learned: user prefers invented names)
+   1. Update `skills/naming/SKILL.md` step 2 — add 'made-up compound words' direction (learned: user prefers invented names)
    2. Update `agents/dev-architect.md` stack defaults — lead with Laravel not Rails (learned: user preference)
    [etc.]
    Shall I apply all, some, or none? (reply with 'all', 'none', or list the numbers)"

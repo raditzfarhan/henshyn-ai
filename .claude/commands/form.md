@@ -11,7 +11,7 @@ Get a tech stack recommendation for a given problem, project type, or set of con
 `dev-architect` → load from `agents/dev-architect.md`
 
 ## Skills
-`system-design` → load from `skills/system-design.md`
+`system-design` → load from `skills/system-design/SKILL.md`
 
 ## Execution Steps
 1. Read the project type, constraints, and requirements

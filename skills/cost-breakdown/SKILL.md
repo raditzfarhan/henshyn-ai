@@ -1,7 +1,12 @@
-# Skill: Cost Breakdown
+---
+name: cost-breakdown
+description: Use when generating a client-ready cost estimate for a software project, covering development hours, one-time setup costs, monthly operational costs, and optional add-ons.
+---
 
-## Purpose
-Generate a detailed, client-ready cost breakdown for a software project — covering development, setup, and ongoing operational costs.
+# Cost Breakdown
+
+## Overview
+Generate a detailed, client-ready cost breakdown. Always separate fixed from variable costs — clients get confused when they're mixed.
 
 ## Process
 1. **Identify project type** — custom build for a client, or SaaS product? This determines cost structure.
@@ -13,30 +18,25 @@ Generate a detailed, client-ready cost breakdown for a software project — cove
 7. **List optional add-ons** — maintenance retainer, feature additions, annual management.
 
 ## Output Format
-Follow this structure exactly:
 
 ### Development Cost
 Table: Phase | Scope | Est. Hours | Rate | Cost
 Subtotal + recommended fixed project price with note.
 
 ### One-Time Setup Costs
-Table: Item | Cost
-Total.
+Table: Item | Cost — Total.
 
 ### Monthly Operational Costs
 Table: Service | Provider | Monthly Cost
-Fixed monthly total.
-Variable costs (e.g. payment gateway %) listed separately.
+Fixed monthly total. Variable costs (e.g. payment gateway %) listed separately.
 
 ### Full Cost Summary
-Table: Category | Cost
-Four rows: Development (one-time), Setup (one-time), Monthly running, Variable fees.
+Table: Category | Cost — four rows: Development (one-time), Setup (one-time), Monthly running, Variable fees.
 
 ### Optional Add-ons
 Table: Add-on | Est. Cost
 
 ## Notes
-- Always separate fixed from variable costs — clients get confused when they're mixed
 - Payment gateway fees are always variable — show as % with a worked example
 - Suggest a maintenance retainer as an optional line item, not a hard requirement
 - Round fixed project price to a clean number for client presentation

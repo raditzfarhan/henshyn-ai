@@ -1,11 +1,16 @@
-# Skill: Naming
+---
+name: naming
+description: Use when generating name options for a product, feature, brand, or project — especially after the concept is defined and the user wants strong, memorable candidates.
+---
 
-## Purpose
-Generate strong, memorable names for products, features, and projects.
+# Naming
+
+## Overview
+Generate strong, memorable names by going wide first (15 raw candidates) then filtering hard (top 5). Volume and diversity of directions produce better results than iterating on a single direction.
 
 ## Process
 1. **Extract core concept** — what is this thing really? What emotion or action should the name evoke?
-2. **Generate 15 raw candidates** — across these directions:
+2. **Generate 15 raw candidates** across these directions:
    - Made-up words (invented, phonetically pleasing)
    - Compound words (two concepts merged)
    - Metaphors (the product is like a ___)

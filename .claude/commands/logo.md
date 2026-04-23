@@ -8,7 +8,7 @@ description: Generate SVG logo variations for a brand name
 Generate polished SVG logos on demand for any project name or brand.
 
 ## Skill
-`generate-logo` → load from `skills/generate-logo.md`
+`generate-logo` → load from `skills/generate-logo/SKILL.md`
 
 ## Execution Steps
 1. If an argument is provided (e.g. `/logo myapp`), use it as the brand name

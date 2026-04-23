@@ -11,7 +11,7 @@ Stress-test an existing idea to find fatal flaws and get a clear proceed/pivot/k
 `wish-analyst` → load from `agents/wish-analyst.md`
 
 ## Skills
-`validate-idea` → load from `skills/validate-idea.md`
+`validate-idea` → load from `skills/validate-idea/SKILL.md`
 
 ## Execution Steps
 1. Read the user's idea or description

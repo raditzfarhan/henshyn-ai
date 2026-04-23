@@ -145,7 +145,7 @@ When a command file specifies an agent:
 → Apply the active personality as a tone overlay on top
 
 When a command file specifies a skill:
-→ Read the full skill file from `skills/{name}.md`
+→ Read the full skill file from `skills/{name}/SKILL.md`
 → Follow the Process steps in order
 → The skill informs how you think; the agent defines what you output
 

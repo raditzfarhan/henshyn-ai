@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "Bash(node scripts/generate-logo.mjs outputs/logos/.spec.json)"
+      "Bash(node scripts/generate-logo.mjs outputs/logos/.spec.json)",
+      "Bash(node scripts/regen-preview.mjs outputs/logos/jaga)"
     ]
   }
 }

@@ -1,7 +1,12 @@
-# Skill: Research Deep Dive
+---
+name: deep-scan
+description: Use when answering complex questions that require real web research, synthesis across multiple sources, or cross-referencing conflicting information.
+---
 
-## Purpose
-Answer complex questions by finding, reading, and synthesizing real information from the web.
+# Deep Scan — Research Deep Dive
+
+## Overview
+Answer complex questions by finding, reading, and synthesizing real information from the web. Decompose first, search specifically, synthesize last.
 
 ## Process
 1. **Decompose the query** — break the main question into 3–5 specific sub-questions that can each be searched.

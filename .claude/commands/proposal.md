@@ -11,8 +11,8 @@ Write a structured project proposal for an idea or feature.
 `proposal-writer` → load from `agents/proposal-writer.md`
 
 ## Skills
-`write-proposal` → load from `skills/write-proposal.md`
-`cost-breakdown` → load from `skills/cost-breakdown.md`
+`write-proposal` → load from `skills/write-proposal/SKILL.md`
+`cost-breakdown` → load from `skills/cost-breakdown/SKILL.md`
 
 ## Execution Steps
 1. Read the user's project description or reference a previous idea output

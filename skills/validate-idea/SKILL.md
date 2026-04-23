@@ -1,7 +1,12 @@
-# Skill: Validate Idea
+---
+name: validate-idea
+description: Use when stress-testing a new product, feature, or business idea before investing time — especially when the user wants to find fatal flaws or decide whether to proceed, pivot, or kill.
+---
 
-## Purpose
-Stress-test an idea to find fatal flaws before investing time in it.
+# Validate Idea
+
+## Overview
+Stress-test an idea to find fatal flaws before investing time in it. Forces specificity at every step — no vague answers allowed.
 
 ## Process
 1. **Define the target user** — who specifically has this problem? Not "everyone" or "small businesses". Name a real persona.

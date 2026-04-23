@@ -99,11 +99,69 @@ function iconTMark(s, colors, arcId) {
   <path d="M${f(s*0.58)} ${f(s*0.64)} Q${f(s*0.76)} ${f(s*0.52)} ${f(s*0.84)} ${f(s*0.64)}" stroke="url(#${arcId})" stroke-width="${f(s*0.02)}" fill="none" stroke-linecap="round" stroke-opacity="0.4"/>`;
 }
 
+function iconPoliceHat(s, colors) {
+  const f = (n) => n.toFixed(1);
+  const cx = s / 2;
+
+  // Front-facing police peaked cap (ref: dome crown + wide brim wings + shield badge)
+
+  // Crown: rounded top, sides angle outward slightly toward band
+  const crownPath =
+    `M${f(s*0.20)},${f(s*0.56)}` +
+    ` L${f(s*0.15)},${f(s*0.42)}` +
+    ` Q${f(s*0.18)},${f(s*0.17)} ${f(cx)},${f(s*0.11)}` +
+    ` Q${f(s*0.82)},${f(s*0.17)} ${f(s*0.85)},${f(s*0.42)}` +
+    ` L${f(s*0.80)},${f(s*0.56)} Z`;
+
+  // Band: accent horizontal stripe spanning crown base width
+  const bandTop = s * 0.56, bandH = s * 0.08;
+
+  // Brim: WIDER than crown — side wings flare out, bottom curves down convex
+  const brimPath =
+    `M${f(s*0.20)},${f(bandTop + bandH)}` +
+    ` Q${f(s*0.04)},${f(bandTop + bandH + s*0.02)} ${f(s*0.04)},${f(s*0.73)}` +
+    ` Q${f(s*0.16)},${f(s*0.84)} ${f(cx)},${f(s*0.86)}` +
+    ` Q${f(s*0.84)},${f(s*0.84)} ${f(s*0.96)},${f(s*0.73)}` +
+    ` Q${f(s*0.96)},${f(bandTop + bandH + s*0.02)} ${f(s*0.80)},${f(bandTop + bandH)} Z`;
+
+  // Shield badge on crown face (pentagon bottom)
+  const shHW = s * 0.165, shTop = s * 0.18, shBot = s * 0.52;
+  const shieldPath =
+    `M${f(cx)},${f(shTop)}` +
+    ` L${f(cx + shHW)},${f(shTop + s*0.06)}` +
+    ` L${f(cx + shHW)},${f(shBot - s*0.09)}` +
+    ` Q${f(cx + shHW)},${f(shBot)} ${f(cx)},${f(shBot)}` +
+    ` Q${f(cx - shHW)},${f(shBot)} ${f(cx - shHW)},${f(shBot - s*0.09)}` +
+    ` L${f(cx - shHW)},${f(shTop + s*0.06)} Z`;
+
+  // 5-point star inside shield
+  const sCx = cx, sCy = s * 0.358;
+  const ro = s * 0.060, ri = s * 0.024;
+  const starPts = [];
+  for (let i = 0; i < 10; i++) {
+    const angle = (i * Math.PI / 5) - Math.PI / 2;
+    const r = i % 2 === 0 ? ro : ri;
+    starPts.push(`${f(sCx + r * Math.cos(angle))},${f(sCy + r * Math.sin(angle))}`);
+  }
+  const starPath = `M${starPts.join(" L")} Z`;
+
+  const sw = f(s * 0.020);
+  const dark = colors.background;
+
+  return `
+  <path d="${crownPath}" fill="${colors.primary}" stroke="${dark}" stroke-width="${sw}"/>
+  <rect x="${f(s*0.15)}" y="${f(bandTop)}" width="${f(s*0.70)}" height="${f(bandH)}" fill="${colors.accent}" stroke="${dark}" stroke-width="${f(s*0.012)}"/>
+  <path d="${brimPath}" fill="${colors.primary}" fill-opacity="0.82" stroke="${dark}" stroke-width="${sw}"/>
+  <path d="${shieldPath}" fill="${colors.accent}" stroke="${dark}" stroke-width="${f(s*0.016)}"/>
+  <path d="${starPath}" fill="${dark}"/>`;
+}
+
 function buildIconContent(variant, s, bgId, arcId) {
   const { icon_concept, colors } = variant;
   if (icon_concept === "tag-wing")    return iconTagWing(s, colors, bgId);
   if (icon_concept === "paper-plane") return iconPaperPlane(s, colors);
   if (icon_concept === "t-mark")      return iconTMark(s, colors, arcId);
+  if (icon_concept === "police-hat")  return iconPoliceHat(s, colors);
   return "";
 }
 
@@ -290,6 +348,7 @@ function renderEmblem(variant) {
 
 // ─── MAIN ────────────────────────────────────────────────────────────
 const generated = [];
+const customStyles = Array.isArray(spec.custom_styles) ? spec.custom_styles : [];
 
 for (const variant of variants) {
   for (const container of ["square", "rounded", "circle"]) {
@@ -320,17 +379,45 @@ const emblemPath = join(outDir, `${brand.slug}-emblem.svg`);
 writeFileSync(emblemPath, renderEmblem(variants[0]));
 generated.push(emblemPath);
 
+// ─── CUSTOM STYLES (additive — never overwrites existing files) ───────
+const customGenerated = [];
+for (const variant of customStyles) {
+  for (const container of ["square", "rounded", "circle"]) {
+    const path = join(outDir, `${brand.slug}-${variant.id}-icon-${container}.svg`);
+    writeFileSync(path, renderIcon(variant, container));
+    customGenerated.push(path);
+  }
+
+  const wbPath = join(outDir, `${brand.slug}-${variant.id}-wordmark-bold.svg`);
+  writeFileSync(wbPath, renderWordmarkBold(variant));
+  customGenerated.push(wbPath);
+
+  const wsPath = join(outDir, `${brand.slug}-${variant.id}-wordmark-stacked.svg`);
+  writeFileSync(wsPath, renderWordmarkStacked(variant));
+  customGenerated.push(wsPath);
+
+  const lhPath = join(outDir, `${brand.slug}-${variant.id}-lockup-horizontal.svg`);
+  writeFileSync(lhPath, renderLockupHorizontal(variant));
+  customGenerated.push(lhPath);
+
+  const lvPath = join(outDir, `${brand.slug}-${variant.id}-lockup-vertical.svg`);
+  writeFileSync(lvPath, renderLockupVertical(variant));
+  customGenerated.push(lvPath);
+}
+
 // Save spec.json alongside SVGs so refine-logo.mjs can find it.
 // `spec` is declared as `let spec` and parsed before SVG generation — it is in scope here.
 // Writing to the same path as the input spec (if they match) is safe: data is already in memory.
 writeFileSync(join(outDir, "spec.json"), JSON.stringify(spec, null, 2));
 
-console.log(`\nGenerated ${generated.length} SVG files → ${outDir.replace(process.cwd() + "/", "").replace(/\\/g, "/")}/`);
-generated.forEach(f => console.log(`  ${f.replace(process.cwd() + "\\", "").replace(process.cwd() + "/", "").replace(/\\/g, "/")}`));
+const allGenerated = [...generated, ...customGenerated];
+console.log(`\nGenerated ${allGenerated.length} SVG files → ${outDir.replace(process.cwd() + "/", "").replace(/\\/g, "/")}/`);
+allGenerated.forEach(f => console.log(`  ${f.replace(process.cwd() + "\\", "").replace(process.cwd() + "/", "").replace(/\\/g, "/")}`));
 
 // ─── HTML PREVIEW ────────────────────────────────────────────────────
 const logoDir  = relative(process.cwd(), outDir).replace(/\\/g, "/");
 const htmlPath = join(outDir, "index.html");
-writeFileSync(htmlPath, generatePreviewHTML(brand, variants, generated, logoDir));
+const allVariants = [...variants, ...customStyles];
+writeFileSync(htmlPath, generatePreviewHTML(brand, allVariants, allGenerated, logoDir));
 console.log(`\n  index.html → open in browser to preview all logos`);
 

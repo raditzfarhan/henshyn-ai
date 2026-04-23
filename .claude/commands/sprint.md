@@ -11,7 +11,7 @@ Plan a focused week of work from the active backlog of ideas and tasks.
 `mission-control` → load from `agents/mission-control.md`
 
 ## Skills
-`sprint-planning` → load from `skills/sprint-planning.md`
+`sprint-planning` → load from `skills/sprint-planning/SKILL.md`
 
 ## Tools
 - `TodoWrite` — load the sprint plan into the active task list

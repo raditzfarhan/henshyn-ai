@@ -1,7 +1,12 @@
-# Skill: Brainstorm
+---
+name: imagine
+description: Use when exploring new ideas, features, or directions before committing — especially when the problem space feels unclear or options feel too narrow.
+---
 
-## Purpose
-Generate and expand ideas by thinking wide before narrowing.
+# Imagine — Idea Expansion
+
+## Overview
+Generate and expand ideas by thinking wide before narrowing. Volume first, judgment second.
 
 ## Process
 1. **Reframe the problem** — state it 3 different ways. Which framing is most useful?

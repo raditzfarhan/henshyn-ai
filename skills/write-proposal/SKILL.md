@@ -1,7 +1,12 @@
-# Skill: Write Proposal
+---
+name: write-proposal
+description: Use when structuring a software project into a client-ready proposal — covering goal, scope, stakeholders, tech stack, phases, and cost breakdown.
+---
 
-## Purpose
-Structure a project into a clear, persuasive proposal that stakeholders can act on.
+# Write Proposal
+
+## Overview
+Structure a project into a clear, persuasive proposal that stakeholders can act on. Scope boundaries and cost are as important as the solution — clients need to know what's out as much as what's in.
 
 ## Process
 1. **Clarify the core goal** — write it in one sentence. If you can't, the goal isn't clear yet.

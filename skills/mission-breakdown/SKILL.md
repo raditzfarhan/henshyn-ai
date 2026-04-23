@@ -1,7 +1,12 @@
-# Skill: Task Breakdown
+---
+name: mission-breakdown
+description: Use when decomposing a feature, project, or epic into concrete development tasks with sizing, acceptance criteria, dependencies, and priorities.
+---
 
-## Purpose
-Decompose a feature or project into concrete, sized, prioritized development tasks.
+# Mission Breakdown — Task Decomposition
+
+## Overview
+Decompose a feature or project into concrete, sized, prioritized development tasks. Every task must be independently completable with a verifiable done state.
 
 ## Process
 1. **Identify epics** — what are the 2–6 major feature areas? Name them in 2–6 words each.

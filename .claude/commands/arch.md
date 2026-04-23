@@ -11,7 +11,7 @@ Design the technical architecture for a system or feature.
 `dev-architect` → load from `agents/dev-architect.md`
 
 ## Skills
-`system-design` → load from `skills/system-design.md`
+`system-design` → load from `skills/system-design/SKILL.md`
 
 ## Execution Steps
 1. Read the user's system description or feature requirements

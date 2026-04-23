@@ -11,7 +11,7 @@ Deep research on any topic using web search and synthesis. Default: web-enabled.
 `scanner` → load from `agents/scanner.md`
 
 ## Skills
-`deep-scan` → load from `skills/deep-scan.md`
+`deep-scan` → load from `skills/deep-scan/SKILL.md`
 
 ## Tools
 - `WebSearch` — run targeted searches (default mode)

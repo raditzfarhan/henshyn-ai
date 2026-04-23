@@ -11,7 +11,7 @@ Explore and expand a new idea. Takes a rough concept and develops it into someth
 `wish-analyst` → load from `agents/wish-analyst.md`
 
 ## Skills
-`imagine` → load from `skills/imagine.md`
+`imagine` → load from `skills/imagine/SKILL.md`
 
 ## Execution Steps
 1. Read the user's input (the idea, however rough)

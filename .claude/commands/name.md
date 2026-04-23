@@ -11,7 +11,7 @@ Generate name options for a product, feature, or project.
 `branding-agent` → load from `agents/branding-agent.md`
 
 ## Skills
-`naming` → load from `skills/naming.md`
+`naming` → load from `skills/naming/SKILL.md`
 
 ## Execution Steps
 1. Read what needs naming and any context (tone, audience, existing brand)
@@ -31,5 +31,5 @@ After presenting name options and the user has indicated a preferred name (or co
 
 > "Want me to generate SVG logos for [chosen name]? I'll produce icons, wordmarks, and lockups reflecting the brand. (yes / no)"
 
-If yes → apply `generate-logo` skill from `skills/generate-logo.md`.
+If yes → apply `generate-logo` skill from `skills/generate-logo/SKILL.md`.
 If no → session ends normally.

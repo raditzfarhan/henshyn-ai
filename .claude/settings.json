@@ -18,7 +18,7 @@
           {
             "type": "command",
             "asyncRewake": true,
-            "command": "CONVFILE=\"./memory/conversations/$(date '+%Y-%m-%d').md\"; if [ ! -f \"$CONVFILE\" ]; then printf '{\"hookSpecificOutput\":{\"hookEventName\":\"Stop\",\"additionalContext\":\"IMPORTANT: The session is ending. Please now write the conversation summary following CLAUDE.md Stop hook instructions: (1) write to memory/conversations/%s.md, (2) append one line to memory/conversations/index.md, (3) append session block to memory/session-log.md.\"}}' \"$(date '+%Y-%m-%d')\"; exit 2; fi",
+            "command": "CONVFILE=\"./memory/conversations/$(date '+%Y-%m-%d').md\"; SENTINEL=\"/tmp/claude-stop-$(date '+%Y-%m-%d')\"; if [ -f \"$CONVFILE\" ] || [ -f \"$SENTINEL\" ]; then exit 0; fi; touch \"$SENTINEL\"; printf '{\"hookSpecificOutput\":{\"hookEventName\":\"Stop\",\"additionalContext\":\"IMPORTANT: The session is ending. Please now write the conversation summary following CLAUDE.md Stop hook instructions: (1) write to memory/conversations/%s.md, (2) append one line to memory/conversations/index.md, (3) append session block to memory/session-log.md.\"}}' \"$(date '+%Y-%m-%d')\"; exit 2",
             "timeout": 10
           }
         ]
